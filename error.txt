@@ -1,0 +1,12 @@
+Guru Meditation Error of type InstrFetchProhibited occurred on core  1. Exception was unhandled.
+Register dump:
+PC      : 0x2a412c2c  PS      : 0x00060930  A0      : 0x800d1139  A1      : 0x3ffcd330  
+A2      : 0x3ffc2f88  A3      : 0x3ffc2f8d  A4      : 0x00000000  A5      : 0x00000018  
+A6      : 0x00ff0000  A7      : 0xff000000  A8      : 0x800d10e3  A9      : 0x3ffcd310  
+A10     : 0x3ffc3010  A11     : 0x3ffcd330  A12     : 0x00000018  A13     : 0x3ffc2ec0  
+A14     : 0x00ff0000  A15     : 0xff000000  SAR     : 0x00000007  EXCCAUSE: 0x00000014  
+EXCVADDR: 0x2a412c2c  LBEG    : 0x4000142d  LEND    : 0x4000143a  LCOUNT  : 0xffffff6a  
+
+Backtrace: 0x2a412c2c:0x3ffcd330 0x400d1136:0x3ffcd360 0x400d0c7e:0x3ffcd380 0x400d0cbc:0x3ffcd3a0 0x400f40c1:0x3ffcd3c0
+
+Rebooting...

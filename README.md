@@ -44,9 +44,17 @@ MCU 07 TX2 <-> GPS RX
 MCU 09 D18 <-> SSD SDA
 MCU 10 D19 <-> SSD SCL
 BRD    +   <-> GPS VCC
-BRD    -   <-> GPS GND 
+BRD    -   <-> 2N2222 Emitter
+2N2222 C   <-> GPS GND
+2N2222 B   <-> MPU D19 with 1k tranistor
 BRD    +   <-> SSD VDD
 BRD    -   <-> SSD GND
+BRD    +   <-> MPU9255 VCC
+BRD    -   <-> MPU9255 GND
+MCU 09 D18 <-> MPU SDA
+MCU 10 D19 <-> MPU SCL
+MCU 04 D2  <-> MPU INT
+
 ```
 
 # ToDO
