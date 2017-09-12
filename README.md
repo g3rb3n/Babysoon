@@ -17,6 +17,22 @@
 ## OLED
 - SSD1306 128x64
 
+## GSM 2G
+- SIM800L
+
+## LoraWan
+- SX1272 868MHz (EU)
+- SX1276
+- SX1301
+
+## Accu
+- LiFePO4 3000mAh
+
+## RTC
+- DS1302
+- DS1307
+- DS3231
+
 # Wiring
 ```
 USB power <-> MCU microUSB
@@ -30,5 +46,19 @@ MCU 10 D19 <-> SSD SCL
 BRD    +   <-> GPS VCC
 BRD    -   <-> GPS GND 
 BRD    +   <-> SSD VDD
-BRD    -   <-> SSD GND 
+BRD    -   <-> SSD GND
 ```
+
+# ToDO
+- Connect GSM
+- Connect SX
+- Connect MPU
+- Connect Accu
+- Connect RTC
+- BLE driver
+- WOM on MPU
+- Wake MCU on interrupt
+- Power control of components
+- Power components through transistor
+- Power components through GPIO?
+- Minimize hardware setup
