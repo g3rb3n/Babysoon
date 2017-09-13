@@ -33,6 +33,7 @@ SSD1306 oled(new I2CBus(0x3C, 400000), new ByteUpdateScreenBuffer(128, 64, 1));
 
 #define powerGPSPin 19
 #define mpuIntPin 2
+#define WOM_THRESHOLD 10
 
 gpio_num_t wakeupPin = (gpio_num_t)mpuIntPin;
 
@@ -59,7 +60,7 @@ void setup()
     Serial.print(mpu.identification());
     Serial.println();
   }
-  mpu.wakeOnMotion(100);
+  mpu.wakeOnMotion(WOM_THRESHOLD);
   
   pinMode(mpuIntPin, INPUT);
   
@@ -87,6 +88,7 @@ void setup()
     Serial.print(fix.quality);
     Serial.print(" , ");
     Serial.print(fix.satallites);
+    Serial.println();
     if(fix.quality > 0)
     {
       nextFix = millis() + 10000;
@@ -160,8 +162,8 @@ void loop()
     oled.print(uptime);
     oled.print(" s");
     oled.display();
-    Serial.println(uptime);
-    Serial.println(digitalRead(mpuIntPin));
+    //Serial.println(uptime);
+    //Serial.println(digitalRead(mpuIntPin));
   }
     
   if (nextFix < millis() && !gpsOn)
@@ -175,12 +177,16 @@ void powerGPS(bool on)
 {
   oled.setCursor(6, 0);
   if (on)
-    oled.print("GPS on");
+    oled.println("GPS on");
   else
-    oled.print("GPS off");
+    oled.println("GPS off");
   oled.display();
 
-  Serial.write("Power GPS " + on ? "on" : "off");
+  if (on)
+    Serial.println("Power GPS on");
+  else
+    Serial.println("Power GPS off");
+
   gpsOn = on;
   digitalWrite(powerGPSPin, on);
 }
