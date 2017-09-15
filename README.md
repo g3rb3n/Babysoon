@@ -34,6 +34,7 @@
 - DS3231
 
 # Wiring
+![Breadboard Diagram](https://raw.github.com/g3rb3n/Babysoon/master/Babysoon_bb.png)
 ```
 USB power <-> MCU microUSB
 
